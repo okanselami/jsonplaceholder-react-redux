@@ -8,6 +8,6 @@ export const reducer = {
   posts: postReducer,
   users: userReducer,
   comments: commentReducer,
-  replys: replyReducer,
+  replies: replyReducer,
   tags: tagsReducer,
 };

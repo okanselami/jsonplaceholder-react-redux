@@ -2,13 +2,13 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { API } from '../../service';
 
 // type definitions
-type Comment = {
+export type Comment = {
   id: number;
   body: string;
   postId: number;
 };
 
-type CommentState = {
+export type CommentState = {
   data: Comment[];
   loading: boolean;
   error: string | null;

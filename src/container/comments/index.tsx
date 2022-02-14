@@ -10,9 +10,7 @@ import {
 
 import styles from './index.module.css';
 
-
-// types
-import { ReplyComment, TagsComment } from './types';  
+import { ReplyComment, TagsComment } from './types';
 
 // Components
 import { Card, Typography } from 'antd';
@@ -23,7 +21,7 @@ function Comments() {
   const selectedPostId = useAppSelector((state) => state.posts.selectedPostId);
   const { data, loading, error } = useAppSelector((state) => state.comments);
 
-  const reply = useAppSelector((state) => state.replys);
+  const reply = useAppSelector((state) => state.replies);
   const tags = useAppSelector((state) => state.tags);
   const currentTags = useAppSelector((state) => selectTags(state.tags));
 
@@ -90,6 +88,8 @@ function Comments() {
     <>
       <Typography.Title>Comments</Typography.Title>
       {data.map((item) => {
+
+        // TODO: create a function to duplicate logic
         const commentReply = reply.data.find(
           (reply) => reply.commentId === item.id && reply.postId === item.postId
         );

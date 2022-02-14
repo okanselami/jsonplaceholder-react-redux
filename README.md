@@ -1,6 +1,6 @@
 
 ## 🧐 Introduction
-MVP Projects goal is listing users posts and related comments and also user can tag all comments and reply to comments
+MVP Project's goal is listing posts and their comments.Users can add tags and reply to comments
 
 _Jsonplaceholder api consumed to  posts, user and comments info  :dash:._
 
@@ -10,11 +10,11 @@ _Jsonplaceholder api consumed to  posts, user and comments info  :dash:._
 
 ## 📒 Features
 
-A few of the things you can do with MVP project:
+A few of the things you can do with the MVP project:
 
 * View users posts (Title, Username, Body)
-* View posts comments
-* Add a reply to each comments
+* View post comments
+* Add a reply to each comment
 * Add one or more tags to comments
 * Filter posts by username
 

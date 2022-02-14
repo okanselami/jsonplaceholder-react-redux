@@ -1,18 +1,22 @@
 import { useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 
-import { getCommentsByPostIdAsync } from '../../state/comment/commentSlice';
-import { postReply } from '../../state/reply/replySlice';
-import { postTags, selectTags } from '../../state/tag/tagSlice';
+import {
+  getCommentsByPostIdAsync,
+  postReply,
+  postTags,
+  selectTags,
+} from '../../state';
 
 import styles from './index.module.css';
-import { Card, Typography } from 'antd';
 
-import { ReplyComment, TagsComment } from './types';
+
+// types
+import { ReplyComment, TagsComment } from './types';  
 
 // Components
-import Reply from '../../components/reply';
-import Tag from '../../components/tag';
+import { Card, Typography } from 'antd';
+import { Reply, Tag } from '../../components';
 
 function Comments() {
   const dispatch = useAppDispatch();

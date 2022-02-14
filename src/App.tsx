@@ -1,13 +1,12 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Comment, Filter, Post } from './container';
 
 import 'antd/dist/antd.css';
 
-import { Layout, Row, Col } from 'antd';
+import { Layout } from 'antd';
 
 // redux dispatchers
-import { getPostsAsync } from './state/post/postSlice';
-import { getUsersAsync } from './state/user/userSlice';
+import { getPostsAsync, getUsersAsync } from './state';
 import { useAppDispatch } from './app/hooks';
 
 function App() {
@@ -19,7 +18,7 @@ function App() {
   useEffect(() => {
     dispatch(getPostsAsync());
     dispatch(getUsersAsync());
-  }, []);
+  }, [dispatch]);
 
   const { Header, Content, Sider } = Layout;
 
@@ -31,10 +30,7 @@ function App() {
         </Header>
         <Content style={{ padding: '0 50px' }}>
           <Layout style={{ padding: '24px 0' }}>
-            <Sider
-              style={{ backgroundColor: 'transparent' }}
-              width={400}
-            >
+            <Sider style={{ backgroundColor: 'transparent' }} width={400}>
               <Post />
             </Sider>
             <Content style={{ padding: '0 24px', minHeight: 280 }}>

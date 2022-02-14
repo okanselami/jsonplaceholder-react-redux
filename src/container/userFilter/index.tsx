@@ -1,10 +1,8 @@
-import React from 'react';
-
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
-import { selectUser } from '../../state/user/userSlice';
+import { selectUser } from '../../state';
 
 // components
-import Filter from '../../components/filter';
+import { Filter } from '../../components';
 
 function UserFilter() {
   const dispatch = useAppDispatch();

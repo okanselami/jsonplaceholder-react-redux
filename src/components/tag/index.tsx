@@ -6,7 +6,7 @@ type TagProps = {
   id?: number;
   postId?: number;
   handleTags: any;
-  commentTags?: any;
+  commentTags?: string[];
   currentTags?: string[];
 };
 

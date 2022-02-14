@@ -18,7 +18,7 @@ const Filter: React.FC<FilterProps> = (props) => {
       optionFilterProp='children'
       onChange={onChange}
     >
-      {options.map((option: any) => (
+      {options.map((option: User) => (
         <Select.Option key={option.id} value={option.id}>
           {option.name}
         </Select.Option>

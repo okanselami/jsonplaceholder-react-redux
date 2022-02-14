@@ -3,7 +3,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import { useOnScreen } from '../../hooks/useOnScreen';
 
-import { selectPostId } from '../../state/post/postSlice';
+import { selectPostId } from '../../state';
 
 // constants
 import { PAGE_SIZE } from '../../utils/constants';

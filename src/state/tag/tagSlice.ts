@@ -34,7 +34,7 @@ export const tagSlice = createSlice({
         state.data.push({ postId, commentId, tags: tag });
       } else {
         const index = state.data.findIndex(
-          (item) => item.postId == postId && item.commentId == commentId
+          (item) => item.postId === postId && item.commentId === commentId
         );
         if (index === -1) {
           state.data.push({ postId, commentId, tags: tag });

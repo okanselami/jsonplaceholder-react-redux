@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { Post } from '../../service/json-placeholder';
 import { API } from '../../service';
+import { RootState } from '../../app/store';
 
 // type definitions
 type PostState = {
@@ -63,9 +64,9 @@ export const { selectPostId } = postSlice.actions;
  * @param postId
  * @returns
  */
-export const selectCommentsByPostId = (state: any, postId: string | null) => {
+export const selectCommentsByPostId = (state: RootState, postId: string | null) => {
   if (!postId) return [];
-  const post = state?.posts?.data.find((post: Post) => post.id == postId);
+  const post = state?.posts?.data.find((post: Post) => post.id === postId);
   return post ? post.comments : [];
 };
 

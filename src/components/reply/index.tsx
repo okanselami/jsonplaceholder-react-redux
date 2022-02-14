@@ -17,55 +17,55 @@ const Reply: React.FC<ReplyProps> = (props) => {
 
   return (
     <>
-        <Comment
-          actions={
-            !commentReply
-              ? [
-                  <span
-                    onClick={() => setReplyTo(true)}
-                    key='comment-nested-reply-to'
-                  >
-                    Reply to
-                  </span>,
-                ]
-              : []
-          }
-          author={<a>{email}</a>}
-          content={<p>{body}</p>}
-        >
-          <div key={postId}>
-            {commentReply && (
-              <>
-                <Comment
-                  author={<a>Anonymous User</a>}
-                  content={<p>{commentReply.reply}</p>}
-                ></Comment>
-              </>
-            )}
-          </div>
-        </Comment>
-        {replyTo && !commentReply && (
-          <>
-            <Form.Item>
-              <Input.TextArea
-                rows={4}
-                onChange={(e) => setReply(e.target.value)}
-                value={reply}
-              />
-            </Form.Item>
-            <Form.Item>
-              <Button
-                htmlType='submit'
-                onClick={() =>
-                  handlePost({ postId: postId, commentId: id, reply })
-                }
-                type='primary'
-              >
-                Add Reply
-              </Button>
-            </Form.Item>
-          </>
-        )}
+      <Comment
+        actions={
+          !commentReply
+            ? [
+                <span
+                  onClick={() => setReplyTo(true)}
+                  key='comment-nested-reply-to'
+                >
+                  Reply to
+                </span>,
+              ]
+            : []
+        }
+        author={<a>{email}</a>}
+        content={<p>{body}</p>}
+      >
+        <div key={postId}>
+          {commentReply && (
+            <>
+              <Comment
+                author={<a>Anonymous User</a>}
+                content={<p>{commentReply.reply}</p>}
+              ></Comment>
+            </>
+          )}
+        </div>
+      </Comment>
+      {replyTo && !commentReply && (
+        <>
+          <Form.Item>
+            <Input.TextArea
+              rows={4}
+              onChange={(e) => setReply(e.target.value)}
+              value={reply}
+            />
+          </Form.Item>
+          <Form.Item>
+            <Button
+              htmlType='submit'
+              onClick={() =>
+                handlePost({ postId: postId, commentId: id, reply })
+              }
+              type='primary'
+            >
+              Add Reply
+            </Button>
+          </Form.Item>
+        </>
+      )}
     </>
   );
 };

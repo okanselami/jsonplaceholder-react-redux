@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from 'axios';
 
-export const BASE_URL = 'http://jsonplaceholder.typicode.com/';
+import { BASE_URL } from '../constants/index';
 
 /**
  *
